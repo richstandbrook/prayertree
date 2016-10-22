@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/prayertree/{prayertree_id}', 'HomeController@prayertree');
 
 Route::get('/prayertrees', 'prayerTreeController@index');
+Route::get('/prayertrees/create', 'prayerTreeController@create');
+Route::post('/prayertrees', 'prayerTreeController@store');
 
 Route::get('/contacts', 'contactController@index');
 Route::post('/contacts', 'contactController@store');

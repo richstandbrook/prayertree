@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrayerTree extends Model
 {
-
+    protected $fillable = ['name', 'user_id'];
     protected $appends = ['pin'];
 
     public function getPinAttribute()
