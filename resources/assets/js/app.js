@@ -7,7 +7,7 @@
 
 require('./bootstrap');
 
-var apipath = "mock-api/";
+var apipath = "prayertrees/";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
