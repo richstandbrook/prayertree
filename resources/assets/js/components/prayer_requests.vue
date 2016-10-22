@@ -15,6 +15,7 @@
 <script>
     export default {
         mounted() {
+            $('#prayer-request-table').html( apipath );
             console.log('Component ready.')
         }
     }

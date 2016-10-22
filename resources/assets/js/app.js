@@ -15,8 +15,12 @@ var apipath = "mockapi/";
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('prayer_requests', require('./components/prayer_requests.vue'));
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        apipath: apipath
+    }
 });
