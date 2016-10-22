@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar--prayertree navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -39,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Prayer Tree
+                        <img class="navbar-image navbar-image--prairtree" src="img/logo.svg" />
                     </a>
                 </div>
 

@@ -1,0 +1,13 @@
+.navbar{
+	&--prayertree{
+		margin-bottom: 0;
+		height: 80px;
+		background: $prayer-tree-primary;
+	}
+
+	&-image{
+		&--prairtree{
+			width: 200px;
+		}
+	}
+}

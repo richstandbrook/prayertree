@@ -9,6 +9,9 @@
 
 	&__prayer-tree-container{
 		list-style: none;
+		padding-left: 0;
+		border: 3px solid $prayer-tree-secondary;
+		color: white;
 	}
 
 	&__prayer-tree{

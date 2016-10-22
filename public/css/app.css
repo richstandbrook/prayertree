@@ -5766,6 +5766,18 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.panel--prayertree-login {
+  max-width: 290px;
+  border-radius: 0;
+  margin-top: 50px; }
+
+.panel-heading--prayertree-login {
+  font-weight: bold;
+  color: #636b6f; }
+
+.form-horizontal .control-label--prayertree-login {
+  text-align: initial; }
+
 .homepage__join-tree-container {
   margin: 10px 0; }
 
@@ -5773,12 +5785,33 @@ button.close {
   margin: 10px 0; }
 
 .homepage__prayer-tree-container {
-  list-style: none; }
+  list-style: none;
+  padding-left: 0;
+  border: 3px solid #069221;
+  color: white; }
 
 .homepage__prayer-tree {
-  background: #489852;
+  background: #002f06;
   margin: 20px;
   padding: 20px; }
+
+.navbar--prayertree {
+  margin-bottom: 0;
+  height: 80px;
+  background: #002f06; }
+
+.navbar-image--prairtree {
+  width: 200px; }
+
+.image-background {
+  height: calc(100% - 80px);
+  min-height: calc(100vh - 80px);
+  padding-top: 22px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.image-background--login {
+  background-image: url("../img/backgrounds/prayertree-bg1.jpg"); }
 
 .request {
   background: white;
