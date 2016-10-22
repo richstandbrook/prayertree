@@ -38,22 +38,10 @@ class contactController extends Controller
      */
     public function store(Request $request)
     {
-        // Extract values from request
-        $value = $request->input('value');
-        $type = $request->input('type');
-        
-        // Add values to table
-        $contact = new Contact;
-        
-        $contact->value = $value;
-        $contact->type = $type;
-        $contact->save();
+        $contact = $this->requestToContact($request);
         
         // Respond with a JSON response similar to request
-        return response()->json([
-            'value' => $value,
-            'type' => $type
-        ]);
+        return $this->formResponse($contact);
     }
 
     /**
@@ -67,10 +55,7 @@ class contactController extends Controller
         $contact = Contact::find($id);
         
         // Respond with contact as JSON response
-        return response()->json([
-            'value' => $contact->value,
-            'type' => $contact->type
-        ]);
+        return $this->formResponse($contact);
     }
 
     /**
@@ -93,7 +78,7 @@ class contactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
     }
 
     /**
@@ -105,5 +90,31 @@ class contactController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    private function requestToContact(Request $request, Contact $contact = null)
+    {
+        // Extract values from request
+        $value = $request->input('value');
+        $type = $request->input('type');
+        
+        if ($contact === null)
+        {
+            $contact = new Contact;
+        }
+        
+        // Add values to Contact object
+        $contact->value = $value;
+        $contact->type = $type;
+        
+        return $contact;
+    }
+    
+    private function formResponse(Contact $contact)
+    {
+        return response()->json([
+            'value' => $contact->value,
+            'type' => $contact->type
+        ]); 
     }
 }
