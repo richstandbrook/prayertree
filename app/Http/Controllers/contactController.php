@@ -17,7 +17,8 @@ class contactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return response()->json($contacts);
     }
 
     /**
@@ -99,6 +100,7 @@ class contactController extends Controller
     private function requestToContact(Request $request, Contact $contact = null)
     {
         // Extract values from request
+        $name = $request->input('name');
         $value = $request->input('value');
         $type = $request->input('type');
         
@@ -108,6 +110,7 @@ class contactController extends Controller
         }
         
         // Add values to Contact object
+        $contact->name = $name;
         $contact->value = $value;
         $contact->type = $type;
         
