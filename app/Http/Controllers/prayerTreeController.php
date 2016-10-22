@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PrayerTree;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,7 +29,7 @@ class prayerTreeController extends AuthController
      */
     public function create()
     {
-        //
+        return view('prayertree.create');
     }
 
     /**
@@ -39,7 +40,12 @@ class prayerTreeController extends AuthController
      */
     public function store(Request $request)
     {
-        //
+        $prayerTree = new PrayerTree;
+        $prayerTree->name = $request->get('name');
+        $prayerTree->user_id = Auth::user()->id;
+        $prayerTree->save();
+
+        return response()->json($prayerTree);
     }
 
     /**

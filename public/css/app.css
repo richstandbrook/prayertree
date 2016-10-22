@@ -5772,6 +5772,14 @@ button.close {
 .homepage__new-tree-container {
   margin: 10px 0; }
 
+.homepage__prayer-tree-container {
+  list-style: none; }
+
+.homepage__prayer-tree {
+  background: #489852;
+  margin: 20px;
+  padding: 20px; }
+
 .request {
   background: white;
   padding: 0px;
