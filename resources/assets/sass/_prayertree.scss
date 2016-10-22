@@ -1,0 +1,96 @@
+.request {
+  background: white;
+  padding: 0px;
+  border-radius: 10px;
+  margin-bottom:20px;
+}
+
+.request__top {
+  background-color: rgb(147, 213, 247);
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+  height:40px;
+}
+
+.request__from {
+  width: 80%;
+  float: left;
+  padding: 10px;
+}
+
+.request__when {
+  width: 20%;
+  float: right;
+  padding: 10px;
+  text-align: right;
+}
+
+.request__main{
+    padding: 10px;
+    min-height:30px;
+}
+
+.request__bottom{
+    padding: 0px;
+    background-color: rgb(147, 213, 247);
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px;
+    height: 40px;
+
+    .btn-group, .btn{
+        height:100%;  
+    }
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.tables-container{
+    overflow: hidden;
+    padding:10px;
+}
+
+.tables{
+    width: 200%;
+    
+    .prayertree-table{
+        float:left;
+        width:50%;
+        margin: 10px;
+    }
+
+    .fixed-table-toolbar{
+        .btn-group{
+            padding:0px;
+        }
+
+        .table-custom-toolbar{
+            margin-right:5px;
+        }
+
+
+    }
+
+    .input-group{
+        width: 100%;
+        margin-bottom: 5px;
+        input, select{
+            padding: 3px 5px;
+        }
+        label{
+            padding: 7px 10px 3px 0px;
+        }
+
+        @media screen and (min-width: 1083px){
+            text-align: right;
+        }
+
+        label.access,
+        label.data{
+            text-align: left;
+            margin-top: 5px;
+        }
+    }
+}
+

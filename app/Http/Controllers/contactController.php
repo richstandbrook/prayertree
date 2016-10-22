@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\PrayerTree;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Contact;
+use Vinkla\Hashids\Facades\Hashids;
 
 class contactController extends Controller
-{    
+{
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param $prayerTreePin
+     * @return Response
      */
-    public function index()
+    public function index($prayerTreePin)
     {
-        //
+        $id = Hashids::decode($prayerTreePin)[0];
+        $contacts = PrayerTree::find($id)->subscribers;
+
+        return response()->json($contacts);
     }
 
     /**
@@ -53,7 +59,7 @@ class contactController extends Controller
     public function show($id)
     {
         $contact = Contact::find($id);
-        
+
         // Respond with contact as JSON response
         return $this->formResponse($contact);
     }
@@ -81,7 +87,7 @@ class contactController extends Controller
         $contact = Contact::find($id);
         $contact = $this->requestToContact($request, $contact);
         $contact->save();
-        
+
         return $this->formResponse($contact);
     }
 
@@ -95,30 +101,32 @@ class contactController extends Controller
     {
         //
     }
-    
+
     private function requestToContact(Request $request, Contact $contact = null)
     {
         // Extract values from request
+        $name = $request->input('name');
         $value = $request->input('value');
         $type = $request->input('type');
-        
+
         if ($contact === null)
         {
             $contact = new Contact;
         }
-        
+
         // Add values to Contact object
+        $contact->name = $name;
         $contact->value = $value;
         $contact->type = $type;
-        
+
         return $contact;
     }
-    
+
     private function formResponse(Contact $contact)
     {
         return response()->json([
             'value' => $contact->value,
             'type' => $contact->type
-        ]); 
+        ]);
     }
 }
