@@ -1,0 +1,16 @@
+{
+	"prayergroups":[
+		{
+			"id":"1",
+			"name":"prayergroup1"
+		},
+		{
+			"id":"2",
+			"name":"prayergroup2"
+		},
+		{
+			"id":"5",
+			"name":"prayergroup5"
+		},
+	]
+}
