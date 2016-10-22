@@ -15,6 +15,7 @@ class SetPrayerRequestsForeignKeys extends Migration
     {
         Schema::table('prayer_requests', function ($table) {
             $table->foreign('contact_id')->references('id')->on('contacts');
+            $table->foreign('prayer_tree_id')->references('id')->on('prayer_trees');
         });
     }
 
@@ -26,7 +27,8 @@ class SetPrayerRequestsForeignKeys extends Migration
     public function down()
     {
         Schema::table('prayer_requests', function ($table) {
-            $table->dropForeign('contact_id');
+            $table->dropForeign('prayer_requests_contact_id_foreign');
+            $table->dropForeign('prayer_requests_prayer_tree_id_foreign');
         });
     }
 }
