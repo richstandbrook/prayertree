@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 use App\Http\Requests;
+use App\Contact;
 
 class contactController extends Controller
-{
+{    
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +38,21 @@ class contactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Extract values from request
+        $value = $request->input('value');
+        $type = $request->input('type');
+        
+        // Add values to table
+        $contact = new Contact;
+        
+        $contact->value = $value;
+        $contact->type = $type;
+        
+        // Respond with a JSON object similar to request
+        return response()->json([
+            'value' => $value,
+            'type' => $type
+        ]);
     }
 
     /**
