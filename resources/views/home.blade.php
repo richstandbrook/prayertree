@@ -8,7 +8,8 @@
                 <h1 class="panel-heading">Welcome to Prayer Tree</h1>
 
                 <div class="panel-body">
-                    <h2>You currently aren't a part of any tree's<h2>
+                    <h2>Your prayer tree's<h2>
+                        <prayer-groups></prayer-groups>
                     <div class="homepage__join-tree-container">
                         <button class="button-primary">Join Prayer Tree</button>
                     </div>
