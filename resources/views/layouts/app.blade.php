@@ -82,6 +82,9 @@
     </div>
 
     <!-- Scripts -->
+    
     <script src="/js/app.js"></script>
+    <script src="/js/prayertree.js"></script>
+	@yield('scripts')
 </body>
 </html>
