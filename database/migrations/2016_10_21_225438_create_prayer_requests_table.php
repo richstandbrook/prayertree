@@ -20,8 +20,6 @@ class CreatePrayerRequestsTable extends Migration
             $table->boolean('approved');
             $table->timestamp('sent_at');
             $table->timestamps();
-
-            $table->foreign('contact_id')->references('id')->on('contacts');
         });
     }
 
