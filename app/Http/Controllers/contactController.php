@@ -49,7 +49,7 @@ class contactController extends Controller
         $contact->type = $type;
         $contact->save();
         
-        // Respond with a JSON object similar to request
+        // Respond with a JSON response similar to request
         return response()->json([
             'value' => $value,
             'type' => $type
@@ -64,7 +64,13 @@ class contactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+        
+        // Respond with contact as JSON response
+        return response()->json([
+            'value' => $contact->value,
+            'type' => $contact->type
+        ]);
     }
 
     /**
