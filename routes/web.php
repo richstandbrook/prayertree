@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/prayertree/{prayertree_id}', 'HomeController@prayertree');
+
+Route::get('/prayertrees', 'prayerTreeController@index');
