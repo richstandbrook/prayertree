@@ -20,3 +20,5 @@ Route::get('/user', function (Request $request) {
 Route::post('/contacts', 'contactController@store');
 
 Route::get('/contacts/{id}', 'contactController@show');
+
+Route::patch('/contacts/{id}', 'contactController@update');

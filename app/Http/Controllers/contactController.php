@@ -39,7 +39,7 @@ class contactController extends Controller
     public function store(Request $request)
     {
         $contact = $this->requestToContact($request);
-        
+        $contact->save();
         // Respond with a JSON response similar to request
         return $this->formResponse($contact);
     }
@@ -79,6 +79,10 @@ class contactController extends Controller
     public function update(Request $request, $id)
     {
         $contact = Contact::find($id);
+        $contact = $this->requestToContact($request, $contact);
+        $contact->save();
+        
+        return $this->formResponse($contact);
     }
 
     /**
