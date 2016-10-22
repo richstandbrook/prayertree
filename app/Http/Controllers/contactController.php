@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 use App\Http\Requests;
+use App\Contact;
 
 class contactController extends Controller
-{
+{    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,8 @@ class contactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return response()->json($contacts);
     }
 
     /**
@@ -36,7 +39,10 @@ class contactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = $this->requestToContact($request);
+        $contact->save();
+        // Respond with a JSON response similar to request
+        return $this->formResponse($contact);
     }
 
     /**
@@ -47,7 +53,10 @@ class contactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+        
+        // Respond with contact as JSON response
+        return $this->formResponse($contact);
     }
 
     /**
@@ -70,7 +79,11 @@ class contactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact = $this->requestToContact($request, $contact);
+        $contact->save();
+        
+        return $this->formResponse($contact);
     }
 
     /**
@@ -82,5 +95,33 @@ class contactController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    private function requestToContact(Request $request, Contact $contact = null)
+    {
+        // Extract values from request
+        $name = $request->input('name');
+        $value = $request->input('value');
+        $type = $request->input('type');
+        
+        if ($contact === null)
+        {
+            $contact = new Contact;
+        }
+        
+        // Add values to Contact object
+        $contact->name = $name;
+        $contact->value = $value;
+        $contact->type = $type;
+        
+        return $contact;
+    }
+    
+    private function formResponse(Contact $contact)
+    {
+        return response()->json([
+            'value' => $contact->value,
+            'type' => $contact->type
+        ]); 
     }
 }

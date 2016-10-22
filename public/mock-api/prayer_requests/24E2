@@ -1,22 +1,28 @@
 {
-    requests:[{
+    "requests":[{
         "id":"prayerrequest1",
         "text":"Please pray for my aunt who is very ill.",
         "time_received":"2016-10-22T11:20:05+00:00",
-	"contact_id" "contact_1"
-        "prayertree_id": "prayertreeid1"
+	    "contact_id": "contact_1",
+        "contact_name": "Frank Grimes",
+        "prayertree_id": "prayertreeid1",
+        "status": "pending"
    },{
         "id":"prayerrequest2",
         "text":"Please pray for my job application.",
         "time_received":"2016-10-22T11:20:05+00:00",
-	"contact_id" "contact_2"
-        "prayertree_id": "prayertreeid2"
+	    "contact_id": "contact_2",
+        "contact_name": "Joe Bloggs",
+        "prayertree_id": "prayertreeid2",
+        "status":"approved"
    },{
         "id":"prayerrequest3",
         "text":"Please pray for my grandaaught Alice as she starts her GCSEs.",
         "time_received":"2016-10-22T11:20:05+00:00",
-	"contact_id" "contact_3"
-        "prayertree_id": "prayertreeid3"
+	    "contact_id": "contact_3",
+        "contact_name": "Helen Smith",
+        "prayertree_id": "prayertreeid3",
+        "status": "pending"
    }]
 }
 
