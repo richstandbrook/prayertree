@@ -41,6 +41,7 @@ $factory->define(\App\Contact::class, function (Faker\Generator $faker) {
     }
 
     return [
+        'name' => $faker->name,
         'value' => $value,
         'type' => $type,
         'status' => $faker->boolean(80) ? 'approved' : 'pending'
