@@ -19,4 +19,9 @@ class PrayerTree extends Model
     {
         return $this->belongsToMany(Contact::class, 'subscriptions');
     }
+
+    public function requests()
+    {
+        return $this->hasMany(PrayerRequest::class);
+    }
 }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\PrayerTree;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Vinkla\Hashids\Facades\Hashids;
 
 class prayerRequestController extends Controller
 {
@@ -13,9 +15,12 @@ class prayerRequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($prayerTreePin)
     {
-        //
+        $id = Hashids::decode($prayerTreePin)[0];
+        $requests = PrayerTree::find($id)->requests;
+
+        return response()->json($requests);
     }
 
     /**
