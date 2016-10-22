@@ -18,7 +18,7 @@ class prayerRequestController extends Controller
     public function index($prayerTreePin)
     {
         $id = Hashids::decode($prayerTreePin)[0];
-        $requests = PrayerTree::find($id)->requests;
+        $requests = PrayerTree::find($id)->requests()->with('contact')->get();
 
         return response()->json($requests);
     }
