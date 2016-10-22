@@ -7,8 +7,8 @@
    },{
         "name":"Joe Bloggs",
         "id":"contact2",
-        "type":"email",
-        "value":"jonathan.berry@durham.ac.uk"
+        "type":"sms",
+        "value":"08452 345768"
    },{
         "name":"Helen Smith",
         "id":"contact3",
