@@ -47,6 +47,7 @@ class contactController extends Controller
         
         $contact->value = $value;
         $contact->type = $type;
+        $contact->save();
         
         // Respond with a JSON object similar to request
         return response()->json([
