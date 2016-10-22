@@ -6,7 +6,7 @@
 	    "contact_id": "contact_1",
         "contact_name": "Frank Grimes",
         "prayertree_id": "prayertreeid1",
-        "status": "unreviewed"
+        "status": "pending"
    },{
         "id":"prayerrequest2",
         "text":"Please pray for my job application.",
@@ -14,7 +14,7 @@
 	    "contact_id": "contact_2",
         "contact_name": "Joe Bloggs",
         "prayertree_id": "prayertreeid2",
-        "status":"reviewed"
+        "status":"approved"
    },{
         "id":"prayerrequest3",
         "text":"Please pray for my grandaaught Alice as she starts her GCSEs.",
@@ -22,7 +22,7 @@
 	    "contact_id": "contact_3",
         "contact_name": "Helen Smith",
         "prayertree_id": "prayertreeid3",
-        "status": "sent"
+        "status": "pending"
    }]
 }
 
