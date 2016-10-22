@@ -83,15 +83,15 @@ function drawTables( prayertree_id ){
     //A function that prepares the data for displaying in the table.
     function contactPrep(res){
         console.log(res);
-        for( var a in res.contacts ){
-            var row = res.contacts[a];
+        for( var a in res ){
+            var row = res[a];
             //TODO Prepdata.
         }
-        return res.contacts;
+        return res;
     }
     
     var requestUrl = apipath + 'prayer_requests/' + prayertree_id;
-    var contactUrl = apipath + 'contacts/' + prayertree_id;
+    var contactUrl =  '/prayertrees/' + prayertree_id +'/contacts/';
 
     //Creat the bootstrap table.
     table = $('#request-table').bootstrapTable({
@@ -238,7 +238,7 @@ function drawContactEditor(contact, container_id){
             "</label><select class='form-control type col-xs-12 col-md-6 col-lg-7' " +
             "name='type' value='" + contact.type + "' id='type' required oninput='updateType();'>"+
             "<option value='email' selected>Email</option>" +
-            "<option value='sms'>SMS</option>" +
+            "<option value='mobile'>Mobile</option>" +
             "</select></div>";
 
     html += "<div class='input-group row'>" + 
@@ -270,7 +270,7 @@ function drawContactEditor(contact, container_id){
     $('#'+container_id).html( html );
 
     $('.contacteditor__form .type').val(contact.type);
-
+    if( $('.contacteditor__form .type').val() == 'mobile' ) updateType();
 
     
 
@@ -316,7 +316,6 @@ function drawContactEditor(contact, container_id){
 }
 
 function updateType(){
-    console.log( 'flag2');
     $('.type-word').text( $('.contacteditor__form .type').val().replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
 }
 
