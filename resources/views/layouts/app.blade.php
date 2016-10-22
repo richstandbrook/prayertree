@@ -11,6 +11,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -82,6 +85,12 @@
     </div>
 
     <!-- Scripts -->
+
+    <!-- Latest compiled and minified Locales -->
     <script src="/js/app.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+    <script src="/js/prayertree.js"></script>
+	@yield('scripts')
 </body>
 </html>

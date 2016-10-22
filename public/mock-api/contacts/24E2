@@ -1,0 +1,19 @@
+{
+    "contacts":[{
+        "id":"contact1",
+        "type":"email",
+        "value":"jonathan.s.berry@googlemail.com",
+        "name":"Frank Grimes"
+   },{
+        "name":"Joe Bloggs",
+        "id":"contact2",
+        "type":"email",
+        "value":"jonathan.berry@durham.ac.uk"
+   },{
+        "name":"Helen Smith",
+        "id":"contact3",
+        "type":"email",
+        "value":"jonathan.s.berry@googlemail.com"
+   }]
+}
+

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrayerRequestsTable extends Migration
+class CreateSubscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class CreatePrayerRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('prayer_requests', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('text');
             $table->unsignedInteger('contact_id');
             $table->unsignedInteger('prayer_tree_id');
-            $table->boolean('approved');
-            $table->timestamp('sent_at')->nullable();
-            $table->timestamps();
+
+            $table->foreign('contact_id')
+                ->references('id')->on('contacts')
+                ->onDelete('cascade');
+
+            $table->foreign('prayer_tree_id')
+                ->references('id')->on('prayer_trees')
+                ->onDelete('cascade');
         });
     }
 
@@ -31,6 +35,6 @@ class CreatePrayerRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prayer_requests');
+        Schema::dropIfExists('subscriptions');
     }
 }

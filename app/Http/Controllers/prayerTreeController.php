@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
-class prayerTreeController extends Controller
+class prayerTreeController extends AuthController
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +16,15 @@ class prayerTreeController extends Controller
      */
     public function index()
     {
-        //
+        $prayerTrees = Auth::user()->prayerTrees()->get();
+
+        return response()->json($prayerTrees);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     $user = Auth::user();
      */
     public function create()
     {

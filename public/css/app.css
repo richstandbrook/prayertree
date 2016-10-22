@@ -5780,4 +5780,58 @@ button.close {
   margin: 20px;
   padding: 20px; }
 
+.request {
+  background: white;
+  padding: 0px;
+  border-radius: 10px;
+  margin-bottom: 20px; }
+
+.request__top {
+  background-color: #93d5f7;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
+  height: 40px; }
+
+.request__from {
+  width: 80%;
+  float: left;
+  padding: 10px; }
+
+.request__when {
+  width: 20%;
+  float: right;
+  padding: 10px;
+  text-align: right; }
+
+.request__main {
+  padding: 10px;
+  min-height: 30px; }
+
+.request__bottom {
+  padding: 0px;
+  background-color: #93d5f7;
+  overflow: hidden;
+  border-radius: 0px 0px 10px 10px;
+  height: 40px; }
+  .request__bottom .btn-group, .request__bottom .btn {
+    height: 100%; }
+
+.clickable {
+  cursor: pointer; }
+
+.tables-container {
+  overflow: hidden;
+  padding: 10px; }
+
+.tables {
+  width: 200%; }
+  .tables .prayertree-table {
+    float: left;
+    width: 50%;
+    margin: 10px; }
+  .tables .fixed-table-toolbar .btn-group {
+    padding: 0px; }
+  .tables .fixed-table-toolbar .table-custom-toolbar {
+    margin-right: 5px; }
+
 /*# sourceMappingURL=app.css.map */

@@ -22,3 +22,35 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\PrayerTree::class, function (Faker\Generator $faker) {
+    return [
+        'name' => "{$faker->city} prayer tree"
+    ];
+});
+
+$factory->define(\App\Contact::class, function (Faker\Generator $faker) {
+
+    if ($faker->boolean(80)) {
+        $value = $faker->mobileNumber;
+        $type = 'mobile';
+    } else {
+        $value = $faker->safeEmail;
+        $type = 'email';
+    }
+
+    return [
+        'name' => $faker->name,
+        'value' => $value,
+        'type' => $type,
+        'status' => $faker->boolean(80) ? 'approved' : 'pending'
+    ];
+});
+
+$factory->define(\App\PrayerRequest::class, function(Faker\Generator $faker) {
+    return [
+        'text' => $faker->realText(140),
+        'approved' => $faker->boolean(80)
+    ];
+});

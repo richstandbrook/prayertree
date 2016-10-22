@@ -26,10 +26,15 @@ class HomeController extends Controller
         return view('home');
     }
 
-        public function test()
+    /**
+     * Show prayertree page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function prayertree($prayertree_id)
     {
-        return view('test');
+	$data['prayertree_id'] = $prayertree_id;
+        return view('prayertree', $data);
     }
-
 
 }

@@ -15,6 +15,7 @@ var apipath = "mock-api/";
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('prayer_requests', require('./components/prayer_requests.vue'));
 Vue.component('example', require('./components/Example.vue'));
 
 var data = {
@@ -74,7 +75,10 @@ Vue.component('prayer-groups', {
 //alert(JSON.stringify( testvar ) );
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        apipath: apipath
+    }
 });
 /*
 function test(){
