@@ -1,7 +1,23 @@
-.homepage__join-tree-container{
-	margin: 10px 0;
+.homepage{
+	&__join-tree-container{
+		margin: 10px 0;
+	}
+
+	&__new-tree-container{
+		margin: 10px 0;
+	}
+
+	&__prayer-tree-container{
+		list-style: none;
+	}
+
+	&__prayer-tree{
+		background: $prayer-tree-primary;
+		margin: 20px;
+    	padding: 20px;
+	}
 }
 
-.homepage__new-tree-container{
-	margin: 10px 0;
-}
+
+
+
