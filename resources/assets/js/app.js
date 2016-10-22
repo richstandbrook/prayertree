@@ -7,7 +7,6 @@
 
 require('./bootstrap');
 
-var apipath = "prayertrees/";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -22,7 +21,7 @@ var data = {
 	prayertrees: []
 };
 
-var apipathfull = apipath + 'prayertrees.json';
+var apipathfull = '/prayertrees';
 
 $.getJSON(apipathfull, function(jsondata) {
  	data.prayertrees = ( jsondata );
@@ -77,7 +76,7 @@ Vue.component('prayer-groups', {
 const app = new Vue({
     el: '#app',
     data: {
-        apipath: apipath
+        apipathfull: apipathfull
     }
 });
 /*
