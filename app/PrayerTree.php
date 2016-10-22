@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrayerTree extends Model
 {
-    public function getIdAttribute()
+
+    protected $appends = ['pin'];
+
+    public function getPinAttribute()
     {
         return Hashids::encode($this->attributes['id']);
     }
+
     public function subscribers()
     {
         return $this->belongsToMany(Contact::class, 'subscriptions');
