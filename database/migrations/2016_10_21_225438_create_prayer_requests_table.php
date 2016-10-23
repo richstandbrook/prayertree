@@ -16,9 +16,9 @@ class CreatePrayerRequestsTable extends Migration
         Schema::create('prayer_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('text');
-            $table->unsignedInteger('contact_id');
+            $table->unsignedInteger('contact_id')->nullable();
             $table->unsignedInteger('prayer_tree_id');
-            $table->boolean('approved');
+            $table->boolean('approved')->default(false);
             $table->timestamp('sent_at')->nullable();
             $table->timestamps();
         });

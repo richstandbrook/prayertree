@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Vinkla\Hashids\HashidsServiceProvider::class,
+        NotificationChannels\Messagebird\MessagebirdServiceProvider::class,
     ],
 
     /*

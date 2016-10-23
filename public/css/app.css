@@ -5902,5 +5902,19 @@ button.close {
     padding: 0px; }
   .tables .fixed-table-toolbar .table-custom-toolbar {
     margin-right: 5px; }
+  .tables .input-group {
+    width: 100%;
+    margin-bottom: 5px; }
+    .tables .input-group input, .tables .input-group select {
+      padding: 3px 5px; }
+    .tables .input-group label {
+      padding: 7px 10px 3px 0px; }
+    @media screen and (min-width: 1083px) {
+      .tables .input-group {
+        text-align: right; } }
+    .tables .input-group label.access,
+    .tables .input-group label.data {
+      text-align: left;
+      margin-top: 5px; }
 
 /*# sourceMappingURL=app.css.map */
