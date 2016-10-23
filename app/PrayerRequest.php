@@ -10,4 +10,9 @@ class PrayerRequest extends Model
     {
         return $this->belongsTo(Contact::class);
     }
+
+    public function prayerTree()
+    {
+        return $this->belongsTo(PrayerTree::class);
+    }
 }
