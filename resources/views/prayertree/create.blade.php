@@ -12,7 +12,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg" name="name" placeholder="Prayer Tree Name">
                                 </div>
-                                <input type="submit" value="Create" class="btn btn-primary pull-right">
+                                <input type="submit" value="Create" class="button-primary">
                             </form>
                         </div>
                     </div>
