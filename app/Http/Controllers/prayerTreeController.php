@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Vinkla\Hashids\Facades\Hashids;
 
 class prayerTreeController extends AuthController
 {
@@ -15,11 +16,17 @@ class prayerTreeController extends AuthController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $prayerTrees = Auth::user()->prayerTrees()->get();
 
-        return response()->json($prayerTrees);
+        if ($request->ajax()) {
+            return response()->json($prayerTrees);
+        }
+
+        return view('prayertree.index', [
+            'prayerTrees' => $prayerTrees
+        ]);
     }
 
     /**
@@ -56,7 +63,19 @@ class prayerTreeController extends AuthController
      */
     public function show($id)
     {
-        //
+        $prayerTree = PrayerTree::findOrFail(
+            Hashids::decode($id)[0]
+        );
+
+        $prayerRequests = $prayerTree->requests()
+            ->orderBy('created_at', 'desc')
+            ->orderBy('approved', 'desc')
+            ->get();
+
+        return view('prayertree.view', [
+            'prayerTree' => $prayerTree,
+            'prayerRequests' => $prayerRequests
+        ]);
     }
 
     /**

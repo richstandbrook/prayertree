@@ -26,6 +26,23 @@ class SendPrayerRequestNotification
      */
     public function handle(PrayerRequestApproved $event)
     {
-        //
+        $prayerRequest  = $event->getPrayerRequest();
+
+        $MessageBird = new \MessageBird\Client(env('MESSAGEBIRD_ACCESS_KEY'));
+
+        $Message = new \MessageBird\Objects\Message();
+        $Message->originator = env('MESSAGEBIRD_ORIGINATOR');
+        $Message->recipients = [
+            env('MESSAGEBIRD_RECIPIENT')
+        ];
+
+        $Message->body = $prayerRequest->text;
+
+        $response = $MessageBird->messages->create($Message);
+
+//        $prayerRequest->prayerTree->subscribers
+//            ->each(function($contact) use ($prayerRequest) {
+//                $contact->notify($prayerRequest);
+//            });
     }
 }
