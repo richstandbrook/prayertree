@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function prayertree($prayertree_id)
     {
-	$data['prayertree_id'] = $prayertree_id;
+        $data['prayertree_id'] = $prayertree_id;
         return view('prayertree', $data);
     }
 

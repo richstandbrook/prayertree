@@ -13,13 +13,24 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-	        <div id='data-container'></div>
+	        <div id='data-container'>
+
+            </div>
         </div>
     </div>
-    <div class="tables-container panel">
-        <div class="row tables">
-            <div class='request-container prayertree-table'><div id='request-table'></div></div>
-            <div class='contact-container prayertree-table'><div id='contact-table'></div></div>
+    <div class="panel panel-default">
+        <div class='panel-heading'>
+            Edit Prayertree Data
+        </div>
+        <div class='panel-body'>
+            <div class='row tables'>
+                <div class='request-container prayertree-table'>
+                    <div id='request-table'></div>
+                </div>
+                <div class='contact-container prayertree-table'>
+                    <div id='contact-table'></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

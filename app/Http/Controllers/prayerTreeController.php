@@ -45,7 +45,8 @@ class prayerTreeController extends AuthController
         $prayerTree->user_id = Auth::user()->id;
         $prayerTree->save();
 
-        return response()->json($prayerTree);
+        $data['prayertree_id'] = $prayerTree->pin;
+        return redirect('/prayertree/'.$prayerTree->pin);
     }
 
     /**
