@@ -9,21 +9,21 @@ function drawTables( prayertree_id ){
             'align': 'center',
             'valign': 'middle'
         },{
-            'field': "status",
-            'title': "State",
+            'field': "approved",
+            'title': "Status",
             'align': "left",
             'class': "header clickable",
             'sortable': true,
             'width': "10%"
         },{
-            'field': "contact_name",
+            'field': "contact.name",
             'title': "From",
             'align': "left",
             'class': "header clickable",
             'sortable': true,
             'width': "15%"
         },{
-            'field': "time_received",
+            'field': "created_at",
             'title': "Time",
             'align': "left",
             'class': "header clickable",
@@ -72,12 +72,12 @@ function drawTables( prayertree_id ){
     //A function that prepares the data for displaying in the table.
     function requestPrep(res){
         console.log(res);
-        for( var a in res.requests ){
-            var row = res.requests[a];
-
-            row.time_received = new Date(row.time_received).toLocaleString(); 
+        for( var a in res ){
+            var row = res[a];
+            row.approved = row.approved ? "Approved" : "Pending";
+            row.created_at = new Date(row.created_at).toLocaleString(); 
         }
-        return res.requests;
+        return res;
     }
 
     //A function that prepares the data for displaying in the table.
@@ -90,10 +90,10 @@ function drawTables( prayertree_id ){
         return res;
     }
     
-    var requestUrl = apipath + 'prayer_requests/' + prayertree_id;
-    var contactUrl =  '/prayertrees/' + prayertree_id +'/contacts/';
+    var requestUrl = '/prayertrees/' + prayertree_id + '/requests/';
+    var contactUrl = '/prayertrees/' + prayertree_id + '/contacts/';
 
-    //Creat the bootstrap table.
+    //Create the bootstrap table.
     table = $('#request-table').bootstrapTable({
         columns: requestColumns,
         classes: 'table table-hover',
@@ -189,10 +189,10 @@ function drawPrayerRequest(request, container_id){
     html += "<div class='request__top'>";
     
     html += "<div class='request__from'><b>From: </b>" + 
-            request.contact_name + "</div>" ;
+            request.contact.name + "</div>" ;
 
     html += "<div class='request__when pull-right'>" + 
-            request.time_received + "</div>" ;
+            request.created_at + "</div>" ;
 
     html += "</div>";
 
