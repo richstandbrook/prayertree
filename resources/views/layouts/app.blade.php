@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar--prayertree navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -39,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Prayer Tree
+                        <img class="navbar-image navbar-image--prairtree" src="/img/logo.svg" />
                     </a>
                 </div>
 
@@ -50,7 +50,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-nav--prairtree navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
@@ -80,6 +80,14 @@
                 </div>
             </div>
         </nav>
+
+        @if (session('status'))
+            <div class="container">
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            </div>
+        @endif
 
         @yield('content')
     </div>

@@ -1,0 +1,28 @@
+.button-primary{
+	background: transparent;
+    border: 3px solid $prayer-tree-primary;
+    color: $prayer-tree-primary;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+
+    a{
+    	color: $prayer-tree-primary;
+    }
+
+
+    &--large{
+    	width: 400px;
+    }
+}
+
+.button-primary:hover{
+	background: $prayer-tree-primary;;
+    color: white;
+    text-decoration: none;
+
+    a{
+    	color: white;
+    	text-decoration: none;
+    }
+}

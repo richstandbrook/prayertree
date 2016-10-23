@@ -63,7 +63,11 @@ class prayerRequestController extends Controller
 
         $prayerRequest->save();
 
-        return response()->json($prayerRequest);
+        if ($request->ajax()) {
+            return response()->json($prayerRequest);
+        }
+
+        return redirect("/prayertrees/{$prayerTreePin}");
     }
 
     /**
@@ -113,7 +117,12 @@ class prayerRequestController extends Controller
             event(new PrayerRequestApproved($prayerRequest));
         }
 
-        return response()->json($prayerRequest);
+        if ($request->ajax()) {
+            return response()->json($prayerRequest);
+        }
+
+        return redirect("/prayertrees/{$prayerRequest->prayerTree->pin}")
+            ->with(['status' => 'Prayer Request sent']);
     }
 
     /**

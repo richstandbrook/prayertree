@@ -1,0 +1,32 @@
+.panel{
+	&--prayertree-login{
+		max-width: 290px;
+		margin-top: 50px;
+	}
+
+	&-heading{
+		&--prayertree-login{
+			font-weight: bold;
+			color: #636b6f;
+		}
+	}
+}
+
+.form-horizontal{
+	.control-label{
+		&--prayertree-login{
+			text-align: initial;
+		}
+	}
+}
+
+.login{
+	&__remember-me{
+		color: black;
+	}
+	&__forgot-password{
+	    display: block;
+	    margin: 10px 0;
+	    color: black;
+	}
+}
