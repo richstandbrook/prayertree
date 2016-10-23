@@ -7,12 +7,18 @@
   padding: 10px;
   font-weight: bold;
   border-radius: 5px; }
+  .button-primary a {
+    color: #002f06; }
   .button-primary--large {
     width: 400px; }
 
 .button-primary:hover {
   background: #002f06;
-  color: white; }
+  color: white;
+  text-decoration: none; }
+  .button-primary:hover a {
+    color: white;
+    text-decoration: none; }
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)

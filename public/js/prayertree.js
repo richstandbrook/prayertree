@@ -16,7 +16,7 @@ function drawTables( prayertree_id ){
             'sortable': true,
             'width': "10%"
         },{
-            'field': "contact.name",
+            'field': "name",
             'title': "From",
             'align': "left",
             'class': "header clickable",
@@ -34,8 +34,15 @@ function drawTables( prayertree_id ){
             'title': "Message",
             'align': "left",
             'class': "header clickable",
+            'sortable': true,
+            'width': "50%"
+        },{
+            'field': "approve_button",
+            'title': "",
+            'align': "left",
+            'class': "header clickable",
             'sortable': false,
-            'width': "60%"
+            'width': "10%"
         }         
     ];
 
@@ -74,8 +81,14 @@ function drawTables( prayertree_id ){
         console.log(res);
         for( var a in res ){
             var row = res[a];
+            if( !row.approved ){
+            row.approve_button = "<button class='approve btn btn-large" +
+                " btn-success' onclick='approve(" + row.id + ");'>Approve</button>";
+            }
             row.approved = row.approved ? "Approved" : "Pending";
             row.created_at = new Date(row.created_at).toLocaleString(); 
+            row.name = row.contact ? row.contact.name : "";
+           
         }
         return res;
     }
@@ -98,7 +111,7 @@ function drawTables( prayertree_id ){
         columns: requestColumns,
         classes: 'table table-hover',
         pagination: true,
-        pageSize: 20,
+        pageSize: 10,
         search: true,
         url: requestUrl,
         responseHandler: requestPrep,
@@ -110,7 +123,7 @@ function drawTables( prayertree_id ){
         columns: contactColumns,
         classes: 'table table-hover',
         pagination: true,
-        pageSize: 20,
+        pageSize: 10,
         search: true,
         url: contactUrl,
         responseHandler: contactPrep,
@@ -118,10 +131,10 @@ function drawTables( prayertree_id ){
     });
 
     //Insert data into editor when clicking upon a row.
-    $( '#request-table' ).on('click-row.bs.table', function (row, $element, field) {
+    /*$( '#request-table' ).on('click-row.bs.table', function (row, $element, field) {
         console.log( "clicked" );
         drawPrayerRequest($element, 'data-container');
-    });
+    });*/
 
     //Insert data into editor when clicking upon a row.
     $( '#contact-table' ).on('click-row.bs.table', function (row, $element, field) {
@@ -159,12 +172,17 @@ function drawTables( prayertree_id ){
         drawContactEditor(undefined, 'data-container');
     });
 
+    $('.table-custom-toolbar .new-request').click( function(){
+        drawRequestEditor(prayertree_id, 'data-container');
+    });
+
     $('.fixed-table-toolbar .requests').click( function(){
 
         $('.contact-container').hide();
         $('.request-container').show();
         $('.fixed-table-toolbar .contacts').toggleClass('active');
         $('.fixed-table-toolbar .requests').toggleClass('active');
+        drawRequestEditor(prayertree_id, 'data-container');
 
     });
 
@@ -174,11 +192,13 @@ function drawTables( prayertree_id ){
         $('.contact-container').show();
         $('.fixed-table-toolbar .contacts').toggleClass('active');
         $('.fixed-table-toolbar .requests').toggleClass('active');
+        drawContactEditor(undefined, 'data-container');
 
     });
 
     $('.contact-container').hide();
     $('.fixed-table-toolbar .requests').addClass('active');
+    drawRequestEditor(prayertree_id, 'data-container');
 
 }
 
@@ -227,9 +247,11 @@ function drawContactEditor(contact, container_id){
         }
     }
 
-    var html = "<div class='contacteditor panel col-md-8 col-md-offset-2'>";
+    var html = "<div class='contacteditor panel panel-default'>";
 
-    html += "<form class='contacteditor__form'>";
+    html += "<div class='panel-heading'>Add New Contact</div>'";
+
+    html += "<div class='panel-body'> <form class='contacteditor__form'>";
     
     html += "<div class='form-group col-xs-12 col-sm-6 col-md-6'>";
 
@@ -265,7 +287,7 @@ function drawContactEditor(contact, container_id){
 
     html += "</form>";
 
-    html += "</div>";
+    html += "</div> </div>";
 
     $('#'+container_id).html( html );
 
@@ -315,6 +337,27 @@ function drawContactEditor(contact, container_id){
 
 }
 
+function drawRequestEditor(pin, container_id){
+
+    var html = "<div class='panel panel-default'><div class='panel-heading'>Create new Prayer Request</div><div class='panel-body'><form class='create-request'><div class='form-group'><textarea name='text' class='form-control'></textarea></div><input type='submit' value='Create' class='btn btn-primary pull-right'></form></div></div>"
+
+    $('#'+container_id).html( html );
+    $(".create-request").submit( function(evt){
+        evt.preventDefault();
+        $.post(
+            '/prayertrees/' + pin + '/requests', 
+            $(".create-request").serialize(), 
+            function(){
+                alert( "Success" ); 
+                $('#request-table').bootstrapTable('refresh');
+            }
+        );
+        
+    });
+    
+
+}
+
 function updateType(){
     $('.type-word').text( $('.contacteditor__form .type').val().replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
 }
@@ -332,5 +375,18 @@ function checkEqual( id1, id2 ) {
         email2.setCustomValidity('');
         return true;
     }
+}
+
+function approve(request_id){
+
+    jQuery.ajax({
+        type: 'PUT',
+        url: '/prayerrequests/' + request_id,
+        data: {'approved':true},
+        success: function(){
+            alert( "Success");
+        }
+    });
+
 }
 

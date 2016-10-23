@@ -56,7 +56,7 @@ class prayerTreeController extends AuthController
             return response()->json($prayerTree);
         }
 
-        return redirect('/home');
+        return redirect("/prayertree/{$prayerTree->pin}");
     }
 
     /**
