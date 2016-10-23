@@ -385,6 +385,7 @@ function approve(request_id){
         data: {'approved':true},
         success: function(){
             alert( "Success");
+            $('#request-table').bootstrapTable('refresh');
         }
     });
 
