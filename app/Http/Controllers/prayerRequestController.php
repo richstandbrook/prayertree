@@ -107,13 +107,13 @@ class prayerRequestController extends Controller
             $prayerRequest->text = $text;
         }
 
-        if ($request->get('approve')) {
+        if ($request->get('approved')) {
             $prayerRequest->approved = true;
         }
 
         $prayerRequest->save();
 
-        if ($request->get('approve')) {
+        if ($request->get('approved')) {
             event(new PrayerRequestApproved($prayerRequest));
         }
 
