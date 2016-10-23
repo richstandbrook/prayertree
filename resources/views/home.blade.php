@@ -15,7 +15,7 @@
                             <button class="button-primary button-primary--large">Join Existing Prayer Tree</button>
                         </div>
                         <div class="homepage__new-tree-container">
-                            <button class="button-primary button-primary--large">Create New Prayer Tree</button>
+                            <button class="button-primary button-primary--large"><a href="prayertrees/create">Create New Prayer Tree</a></button>
                         </div>
                     </div>
                 </div>
