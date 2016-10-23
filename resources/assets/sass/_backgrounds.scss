@@ -1,0 +1,15 @@
+.image-background{
+	height: calc(100% - 80px);
+    min-height: calc(100vh - 80px);
+    padding-top: 22px;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.image-background--login{
+	background-image: url('../img/backgrounds/prayertree-bg1.jpg')
+}
+
+.image-background--home{
+	//background-image: url('../img/backgrounds/prayertree-bg3.jpg')
+}

@@ -4,8 +4,13 @@
 
 // Variables
 @import "variables";
+@import "buttons";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "login";
 @import "homepage";
+@import "navbar";
+@import "backgrounds";
+
 @import "prayertree";

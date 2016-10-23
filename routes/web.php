@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
@@ -23,9 +21,16 @@ Route::get('/prayertree/{prayertree_id}', 'HomeController@prayertree');
 
 Route::get('/prayertrees', 'prayerTreeController@index');
 Route::get('/prayertrees/create', 'prayerTreeController@create');
+Route::get('/prayertrees/{prayertree_id}', 'prayerTreeController@show');
 Route::get('/prayertrees/{prayertree_id}/contacts', 'contactController@index');
 Route::get('/prayertrees/{prayertree_id}/requests', 'prayerRequestController@index');
 Route::post('/prayertrees', 'prayerTreeController@store');
+
+Route::get('/prayertrees/{prayertree_id}/requests/create', 'prayerRequestController@create');
+Route::post('/prayertrees/{prayertree_id}/requests', 'prayerRequestController@store');
+Route::put('/prayertrees/{prayertree_id}/requests', 'prayerRequestController@store');
+
+Route::put('/prayerrequests/{prayerrequest_id}', 'prayerRequestController@update');
 
 Route::get('/contacts', 'contactController@index');
 Route::post('/contacts', 'contactController@store');

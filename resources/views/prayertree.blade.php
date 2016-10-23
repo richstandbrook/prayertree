@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="panel-heading">
+            <h1 class="panel-heading prayertree__primary-title">
                 <span class='prayertree-name'>
                     <?php echo( $prayertree_id ); ?>
                 </span> 
