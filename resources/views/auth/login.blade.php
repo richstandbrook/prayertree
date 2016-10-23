@@ -40,9 +40,9 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="checkbox">
-                                        <label>
+                                        <label class="login__remember-me">
                                             <input type="checkbox" name="remember"> Remember Me
                                         </label>
                                     </div>
@@ -51,11 +51,11 @@
 
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="button-primary">
                                         Login
                                     </button>
 
-                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                                    <a class="login__forgot-password" href="{{ url('/password/reset') }}">
                                         Forgot Your Password?
                                     </a>
                                 </div>

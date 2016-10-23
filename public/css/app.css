@@ -5,7 +5,8 @@
   border: 3px solid #002f06;
   color: #002f06;
   padding: 10px;
-  font-weight: bold; }
+  font-weight: bold;
+  border-radius: 5px; }
   .button-primary--large {
     width: 400px; }
 
@@ -5781,7 +5782,6 @@ button.close {
 
 .panel--prayertree-login {
   max-width: 290px;
-  border-radius: 0;
   margin-top: 50px; }
 
 .panel-heading--prayertree-login {
@@ -5790,6 +5790,14 @@ button.close {
 
 .form-horizontal .control-label--prayertree-login {
   text-align: initial; }
+
+.login__remember-me {
+  color: black; }
+
+.login__forgot-password {
+  display: block;
+  margin: 10px 0;
+  color: black; }
 
 .homepage__join-tree-container {
   margin: 10px 0; }
@@ -5837,7 +5845,18 @@ button.close {
 .navbar-nav--prairtree li a {
   color: white !important;
   font-size: 24px;
-  font-weight: bold; }
+  font-weight: bold;
+  line-height: 45px; }
+
+a.dropdown-toggle {
+  background: #002f06 !important;
+  height: 79px; }
+
+.dropdown-menu {
+  background: #164016 !important; }
+
+.dropdown-menu > li > a:hover {
+  background: #164016; }
 
 .image-background {
   height: calc(100% - 80px);
@@ -5916,5 +5935,8 @@ button.close {
     .tables .input-group label.data {
       text-align: left;
       margin-top: 5px; }
+
+.prayertree__primary-title {
+  font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */

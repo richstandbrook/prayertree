@@ -18,8 +18,24 @@
 					color: white !important;
 				    font-size: 24px;
 				    font-weight: bold;
+				    line-height: 45px;
 				}
 			}
 		}
 	}
+}
+
+a.dropdown-toggle{
+	//background: #164016 !important;
+	background: $prayer-tree-primary !important;
+	height: 79px;
+}
+
+.dropdown-menu{
+	//background: $prayer-tree-primary;
+	background: #164016 !important;
+}
+
+.dropdown-menu > li > a:hover{
+	background: #164016;
 }
