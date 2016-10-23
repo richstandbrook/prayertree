@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <h1 class="panel-heading">Welcome to Prayer Tree</h1>
+                    <h1 class="panel-heading homepage__primary-title">Welcome to Prayer Tree</h1>
 
                     <div class="panel-body">
-                        <h2>Your prayer tree's<h2>
+                        <h2 class="homepage__secondary-title">Your prayer tree's<h2>
                             <prayer-groups></prayer-groups>
                         <div class="homepage__join-tree-container">
-                            <button class="button-primary">Join Prayer Tree</button>
+                            <button class="button-primary button-primary--large">Join Existing Prayer Tree</button>
                         </div>
                         <div class="homepage__new-tree-container">
-                            <button class="button-primary">Create New Prayer Tree</button>
+                            <button class="button-primary button-primary--large">Create New Prayer Tree</button>
                         </div>
                     </div>
                 </div>

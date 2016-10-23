@@ -10,4 +10,16 @@
 			width: 200px;
 		}
 	}
+
+	&-nav{
+		&--prairtree{
+			li{
+				a{
+					color: white !important;
+				    font-size: 24px;
+				    font-weight: bold;
+				}
+			}
+		}
+	}
 }

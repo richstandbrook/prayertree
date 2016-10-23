@@ -10,14 +10,36 @@
 	&__prayer-tree-container{
 		list-style: none;
 		padding-left: 0;
-		border: 3px solid $prayer-tree-secondary;
+		border: 3px solid $prayer-tree-primary;
 		color: white;
 	}
 
-	&__prayer-tree{
-		background: $prayer-tree-primary;
+	&__no-prayer-tree{
 		margin: 20px;
-    	padding: 20px;
+		padding: 20px;
+		color: black;
+		background: $prayer-tree-tertiary;
+	}
+
+	&__prayer-tree{
+		margin: 20px;
+		color: black;
+		background: $prayer-tree-tertiary;
+    	a{
+    		display: block;
+    		padding: 20px;
+    		color: black;
+    		font-weight: bold;
+    	}
+	}
+
+	&__primary-title{
+		font-weight: bold;
+	}
+
+	&__secondary-title{
+		color: #333333;
+		font-weight: bold;
 	}
 }
 

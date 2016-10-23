@@ -1,5 +1,18 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+.button-primary {
+  background: transparent;
+  border: 3px solid #002f06;
+  color: #002f06;
+  padding: 10px;
+  font-weight: bold; }
+  .button-primary--large {
+    width: 400px; }
+
+.button-primary:hover {
+  background: #002f06;
+  color: white; }
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5787,13 +5800,31 @@ button.close {
 .homepage__prayer-tree-container {
   list-style: none;
   padding-left: 0;
-  border: 3px solid #069221;
+  border: 3px solid #002f06;
   color: white; }
 
-.homepage__prayer-tree {
-  background: #002f06;
+.homepage__no-prayer-tree {
   margin: 20px;
-  padding: 20px; }
+  padding: 20px;
+  color: black;
+  background: #DDDDDD; }
+
+.homepage__prayer-tree {
+  margin: 20px;
+  color: black;
+  background: #DDDDDD; }
+  .homepage__prayer-tree a {
+    display: block;
+    padding: 20px;
+    color: black;
+    font-weight: bold; }
+
+.homepage__primary-title {
+  font-weight: bold; }
+
+.homepage__secondary-title {
+  color: #333333;
+  font-weight: bold; }
 
 .navbar--prayertree {
   margin-bottom: 0;
@@ -5802,6 +5833,11 @@ button.close {
 
 .navbar-image--prairtree {
   width: 200px; }
+
+.navbar-nav--prairtree li a {
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold; }
 
 .image-background {
   height: calc(100% - 80px);
