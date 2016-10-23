@@ -1,5 +1,18 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+.button-primary {
+  background: transparent;
+  border: 3px solid #002f06;
+  color: #002f06;
+  padding: 10px;
+  font-weight: bold; }
+  .button-primary--large {
+    width: 400px; }
+
+.button-primary:hover {
+  background: #002f06;
+  color: white; }
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5766,6 +5779,18 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.panel--prayertree-login {
+  max-width: 290px;
+  border-radius: 0;
+  margin-top: 50px; }
+
+.panel-heading--prayertree-login {
+  font-weight: bold;
+  color: #636b6f; }
+
+.form-horizontal .control-label--prayertree-login {
+  text-align: initial; }
+
 .homepage__join-tree-container {
   margin: 10px 0; }
 
@@ -5773,12 +5798,56 @@ button.close {
   margin: 10px 0; }
 
 .homepage__prayer-tree-container {
-  list-style: none; }
+  list-style: none;
+  padding-left: 0;
+  border: 3px solid #002f06;
+  color: white; }
+
+.homepage__no-prayer-tree {
+  margin: 20px;
+  padding: 20px;
+  color: black;
+  background: #DDDDDD; }
 
 .homepage__prayer-tree {
-  background: #489852;
   margin: 20px;
-  padding: 20px; }
+  color: black;
+  background: #DDDDDD; }
+  .homepage__prayer-tree a {
+    display: block;
+    padding: 20px;
+    color: black;
+    font-weight: bold; }
+
+.homepage__primary-title {
+  font-weight: bold; }
+
+.homepage__secondary-title {
+  color: #333333;
+  font-weight: bold; }
+
+.navbar--prayertree {
+  margin-bottom: 0;
+  height: 80px;
+  background: #002f06; }
+
+.navbar-image--prairtree {
+  width: 200px; }
+
+.navbar-nav--prairtree li a {
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold; }
+
+.image-background {
+  height: calc(100% - 80px);
+  min-height: calc(100vh - 80px);
+  padding-top: 22px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.image-background--login {
+  background-image: url("../img/backgrounds/prayertree-bg1.jpg"); }
 
 .request {
   background: white;

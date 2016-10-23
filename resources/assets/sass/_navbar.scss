@@ -1,0 +1,25 @@
+.navbar{
+	&--prayertree{
+		margin-bottom: 0;
+		height: 80px;
+		background: $prayer-tree-primary;
+	}
+
+	&-image{
+		&--prairtree{
+			width: 200px;
+		}
+	}
+
+	&-nav{
+		&--prairtree{
+			li{
+				a{
+					color: white !important;
+				    font-size: 24px;
+				    font-weight: bold;
+				}
+			}
+		}
+	}
+}
