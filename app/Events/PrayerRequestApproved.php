@@ -37,4 +37,12 @@ class PrayerRequestApproved
     {
         return new PrivateChannel('channel-name');
     }
+
+    /**
+     * @return PrayerRequest
+     */
+    public function getPrayerRequest()
+    {
+        return $this->prayerRequest;
+    }
 }
