@@ -52,7 +52,11 @@ class prayerTreeController extends AuthController
         $prayerTree->user_id = Auth::user()->id;
         $prayerTree->save();
 
-        return response()->json($prayerTree);
+        if ($request->ajax()) {
+            return response()->json($prayerTree);
+        }
+
+        return redirect('/home');
     }
 
     /**
